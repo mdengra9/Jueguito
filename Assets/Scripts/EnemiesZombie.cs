@@ -66,6 +66,12 @@ public class EnemiesZombie : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        if (this.gameObject.tag == "DeadZone")
+        {
+            SceneManager.LoadScene(0);
+
+        }
+    
     if(collider.gameObject.tag == "CollisionGoomba")
         {
             if(horizontal == 1)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GroundSensor : MonoBehaviour
 {
@@ -19,6 +20,12 @@ public class GroundSensor : MonoBehaviour
         {
             isGrounded = true;
             playerScript.anim.SetBool("isJumping", false);
+
+        }
+
+        if (other.gameObject.tag == "DeadZone")
+        {
+            SceneManager.LoadScene(0);
 
         }
     }
